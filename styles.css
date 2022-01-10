@@ -5,18 +5,18 @@
 }
 
 body {
-  height: 100vh;
-  margin: 0;
-  font-family: "Lato", sans-serif;
   background-image: linear-gradient(
     0deg,
-    rgb(247, 247, 247) 23.8%,
-    rgb(252, 221, 221) 92%
+    rgba(247, 247, 247, 1) 23.8%,
+    rgba(252, 221, 221, 1) 92%
   );
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-family: "Lato", sans-serif;
+  margin: 0;
 }
 
 .music-container {
@@ -36,26 +36,25 @@ body {
 }
 
 .img-container::after {
-  content: " ";
+  content: "";
   background-color: #fff;
-  height: 20px;
-  width: 20px;
-  position: absolute;
-  left: 50%;
-  bottom: 50%;
   border-radius: 50%;
-  transform: translate(-50%, -50%);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  transform: translate(-50%, 50%);
 }
 
 .img-container img {
-  width: inherit;
-  height: 110px;
   border-radius: 50%;
   object-fit: cover;
+  height: 110px;
+  width: inherit;
   position: absolute;
   bottom: 0;
   left: 0;
-
   animation: rotate 3s linear infinite;
 
   animation-play-state: paused;
@@ -69,6 +68,7 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -78,7 +78,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: -1;
+  z-index: 1;
 }
 
 .action-btn {
@@ -91,7 +91,8 @@ body {
   margin: 0 20px;
 }
 
-.action-btn-big {
+.action-btn.action-btn-big {
+  color: #cdc2d0;
   font-size: 30px;
 }
 
@@ -105,16 +106,21 @@ body {
   position: absolute;
   top: 0;
   left: 20px;
-  width: calc(100% -40px);
+  width: calc(100% - 40px);
   padding: 10px 10px 10px 150px;
   opacity: 0;
   transform: translateY(0%);
-  transition: transform 0.3s ease-in opacity 0.3s ease-in;
+  transition: transform 0.3s ease-in, opacity 0.3s ease-in;
+  z-index: 0;
 }
 
 .music-container.play .music-info {
   opacity: 1;
   transform: translateY(-100%);
+}
+
+.music-info h4 {
+  margin: 0;
 }
 
 .progress-container {
