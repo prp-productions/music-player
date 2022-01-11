@@ -11,6 +11,8 @@ const cover = document.getElementById('cover');
 const currTime = document.querySelector('#currTime');
 const durTime = document.querySelector('#durTime');
 
+
+
 // Song titles
 const songs = ['hey', 'summer', 'ukulele'];
 
@@ -117,7 +119,7 @@ function DurTime (e) {
 	get_sec (currentTime,sec);
 
 	// change currentTime DOM
-	currTime.innerHTML = min +':'+ sec;
+	currentTime.innerHTML = min +':'+ sec;
 
 	// define minutes duration
 	let min_d = (isNaN(duration) === true)? '0':
@@ -146,7 +148,7 @@ function DurTime (e) {
 	get_sec_d (duration);
 
 	// change duration DOM
-	durTime.innerHTML = min_d +':'+ sec_d;
+	duration.innerHTML = min_d +':'+ sec_d;
 		
 };
 
