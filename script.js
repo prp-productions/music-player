@@ -14,7 +14,7 @@ const durTime = document.querySelector('#durTime');
 
 
 // Song titles
-const songs = ['hey', 'summer', 'ukulele', 'prpproduction'];
+const songs = ['hey', 'summer', 'ukulele', 'prp'];
 
 // Keep track of song
 let songIndex = 3;
