@@ -14,10 +14,10 @@ const durTime = document.querySelector('#durTime');
 
 
 // Song titles
-const songs = ['hey', 'summer', 'ukulele', 'prp'];
+const songs = ['hey', 'summer', 'ukulele', 'prp', 'beat01'];
 
 // Keep track of song
-let songIndex = 3;
+let songIndex = 4;
 
 // Initially load song details into DOM
 loadSong(songs[songIndex]);
