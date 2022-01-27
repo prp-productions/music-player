@@ -31,8 +31,11 @@ export class MusicPlayer {
     this.audio.addEventListener("ended", this.nextSong);
 
     this.audio.addEventListener("timeupdate", this.durTime);
+
+    this.songs = ["hey", "prp", "beat01"];
+    this.songIndex = 2;
+    this.loadSong(this.songs[this.songIndex]);
   }
- 
 
   loadSong(song) {
     title.innerText = song;
@@ -57,25 +60,25 @@ export class MusicPlayer {
   }
 
   prevSong = () => {
-    songIndex--;
+    this.songIndex--;
 
-    if (songIndex < 0) {
-      songIndex = songs.length - 1;
+    if (this.songIndex < 0) {
+      this.songIndex = this.songs.length - 1;
     }
 
-    loadSong(songs[songIndex]);
+    loadSong(this.songs[this.songIndex]);
 
     playSong();
   };
 
   nextSong = () => {
-    songIndex++;
+    this.songIndex++;
 
-    if (songIndex > songs.length - 1) {
-      songIndex = 0;
+    if (this.songIndex > this.songs.length - 1) {
+      this.songIndex = 0;
     }
 
-    loadSong(songs[songIndex]);
+    loadSong(this.songs[this.songIndex]);
 
     playSong();
   };
@@ -84,7 +87,7 @@ export class MusicPlayer {
     const { duration, currentTime } = e.srcElement;
     const progressPercent = (currentTime / duration) * 100;
     progress.style.width = `${progressPercent}%`;
-  }
+  };
 
   setProgress = (e) => {
     const width = this.clientWidth;
@@ -92,9 +95,9 @@ export class MusicPlayer {
     const duration = audio.duration;
 
     audio.currentTime = (clickX / width) * duration;
-  }
+  };
 
-  durTime = (e) =>{
+  durTime = (e) => {
     const { duration, currentTime } = e.srcElement;
     var sec;
     var sec_d;
@@ -147,5 +150,5 @@ export class MusicPlayer {
 
     // change duration DOM
     duration.innerHTML = min_d + ":" + sec_d;
-  }
+  };
 }
