@@ -66,9 +66,9 @@ export class MusicPlayer {
       this.songIndex = this.songs.length - 1;
     }
 
-    loadSong(this.songs[this.songIndex]);
+    this.loadSong(this.songs[this.songIndex]);
 
-    playSong();
+    this.playSong();
   };
 
   nextSong = () => {
@@ -78,9 +78,9 @@ export class MusicPlayer {
       this.songIndex = 0;
     }
 
-    loadSong(this.songs[this.songIndex]);
+    this.loadSong(this.songs[this.songIndex]);
 
-    playSong();
+    this.playSong();
   };
 
   updateProgress = (e) => {
