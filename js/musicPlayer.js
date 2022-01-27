@@ -14,7 +14,7 @@ export class MusicPlayer {
     this.durTime = document.querySelector("#durTime");
 
     this.playBtn.addEventListener("click", () => {
-      const isPlaying = musicContainer.classList.contains("play");
+      const isPlaying = this.musicContainer.classList.contains("play");
 
       if (isPlaying) {
         this.pauseSong();
@@ -32,9 +32,7 @@ export class MusicPlayer {
 
     this.audio.addEventListener("timeupdate", this.durTime);
   }
-  display() {
-    this.musicContainer.innerHTML = `music`;
-  }
+ 
 
   loadSong(song) {
     title.innerText = song;
@@ -43,17 +41,17 @@ export class MusicPlayer {
   }
 
   playSong() {
-    musicContainer.classList.add("play");
-    playBtn.querySelector("i.fas").classList.remove("fa-play");
-    playBtn.querySelector("i.fas").classList.add("fa-pause");
+    this.musicContainer.classList.add("play");
+    this.playBtn.querySelector("i.fas").classList.remove("fa-play");
+    this.playBtn.querySelector("i.fas").classList.add("fa-pause");
 
     audio.play();
   }
 
   pauseSong() {
-    musicContainer.classList.remove("play");
-    playBtn.querySelector("i.fas").classList.add("fa-play");
-    playBtn.querySelector("i.fas").classList.remove("fa-pause");
+    this.musicContainer.classList.remove("play");
+    this.playBtn.querySelector("i.fas").classList.add("fa-play");
+    this.playBtn.querySelector("i.fas").classList.remove("fa-pause");
 
     audio.pause();
   }
