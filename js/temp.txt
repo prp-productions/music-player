@@ -7,30 +7,7 @@ let songIndex = 2;
 // Initially load song details into DOM
 loadSong(songs[songIndex]);
 
-// Update song details
- loadSong(song) {
-  title.innerText = song;
-  audio.src = `music/${song}.mp3`;
-  cover.src = `images/prp.jpg`;
-}
 
-// Play song
-playSong() {
-  musicContainer.classList.add("play");
-  playBtn.querySelector("i.fas").classList.remove("fa-play");
-  playBtn.querySelector("i.fas").classList.add("fa-pause");
-
-  audio.play();
-}
-
-// Pause song
- pauseSong() {
-  musicContainer.classList.remove("play");
-  playBtn.querySelector("i.fas").classList.add("fa-play");
-  playBtn.querySelector("i.fas").classList.remove("fa-pause");
-
-  audio.pause();
-}
 
 // Previous song
  prevSong() {
@@ -75,7 +52,7 @@ setProgress(e) {
 }
 
 //get duration & currentTime for Time of song
- DurTime(e) {
+ durTime(e) {
   const { duration, currentTime } = e.srcElement;
   var sec;
   var sec_d;
@@ -155,4 +132,4 @@ progressContainer.addEventListener("click", setProgress);
 audio.addEventListener("ended", nextSong);
 
 // Time of song
-audio.addEventListener("timeupdate", DurTime);
+audio.addEventListener("timeupdate", durTime);
