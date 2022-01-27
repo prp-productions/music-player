@@ -1,7 +1,6 @@
 export class MusicPlayer {
   constructor() {
     this.musicContainer = document.getElementById("music-container");
-    this.testElem = document.querySelector(".test");
     this.playBtn = document.getElementById("play");
     this.prevBtn = document.getElementById("prev");
     this.nextBtn = document.getElementById("next");
@@ -15,6 +14,6 @@ export class MusicPlayer {
     this.durTime = document.querySelector("#durTime");
   }
   display() {
-    this.testElem.innerHTML = `music`;
+    this.musicContainer.innerHTML = `music`;
   }
 }
